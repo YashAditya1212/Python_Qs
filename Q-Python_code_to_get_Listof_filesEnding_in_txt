@@ -1,0 +1,12 @@
+import os
+
+target_path = "./"  # Replace with your target directory path
+
+# Unpack the 3-tuple yielded by os.walk
+for root, dirs, files in os.walk(target_path):
+    # Iterate through the actual list of files in the current root
+    for file in files:
+        if file.endswith(".txt"):
+            # Construct the full path so the OS knows exactly where it is
+            full_path = os.path.join(root, file)
+            print(full_path)
